@@ -1,0 +1,108 @@
+// Wide Screen
+@include mediaXl {
+
+}
+
+// Desktops and Laptops
+@include mediaLg {
+
+}
+
+// Tablets and Small Laptops
+@include mediaMd {
+  main {
+    align-items: center;
+    text-align: center;
+    padding: 4rem !important;
+    .lg-header {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    &#about {
+      margin-top: 10vh;
+      .about-info {
+        margin-top: 3rem;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-areas:
+          'bioImg'
+          'bio'
+          'job1'
+          'job2'
+          'job3';
+          grid-template-columns: repeat(1, 1fr);
+        .bio-img {
+          width: 200px;
+          height: 200px;;
+        }
+        .bio {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+  .menu {
+    &-branding,
+    &-nav {
+      float: none;
+      width: 100%;
+    }
+
+    &-branding {
+      height: 25vh;
+      transform: translate3d(-100%, 0, 0);
+      &.show {
+        // Slide In From Left
+        transform: translate3d(0, 0, 0);
+      }
+      img {
+        width: 150px;
+        height: 150px;
+        border: 2px solid $secondary-color;
+      }
+    }
+    &-nav {
+      height: 75vh;
+      font-size: 24px;
+      font-weight: 250;
+      transform: translate3d(100%, 0, 0);
+      &.show {
+        // Slide In From Right
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+
+// Mobiles
+@include mediaSm {
+  main {
+    padding: 2rem !important;
+  }
+  main#project {
+    margin-top: 20vh;
+    padding: 0 !important;
+  }
+  main#contact {
+    padding: 1rem !important;
+    .boxes {
+      div {
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: 3px solid set-text-color($primary-color);
+        @include easeOut;
+        &:hover {
+          padding: 0.5rem 1rem;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  main#project {
+    .projects {
+      padding: 4rem;
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+}

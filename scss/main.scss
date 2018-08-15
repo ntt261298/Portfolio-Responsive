@@ -1,0 +1,170 @@
+@import 'config';
+@import 'menu';
+@import 'mobile';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva,
+   Verdana, sans-serif;
+  line-height: 1.5;
+}
+//Heading
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 400;
+  &.lg-header {
+    font-size: 6rem;
+  }
+  &.sm-header {
+    font-size: 2rem;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 60px);
+  .icons  {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+      &:hover {
+        color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+  &#home {
+    overflow: hidden;
+    margin-top: 20vh;
+  }
+  &#contact {
+    margin-top: 10vh;
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      div {
+        margin: 1rem;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        border: 3px solid set-text-color($primary-color);
+        @include easeOut;
+        &:hover {
+          padding: 0.5rem 1.5rem;
+          font-size: 2rem;
+          border: 3px solid $secondary-color;
+        }
+      }
+    }
+  }
+  &#project {
+    .projects {
+      margin-top: 30px;
+      display: grid;
+      grid-gap: 0.7rem;
+      grid-template-areas:
+        'project1';
+      grid-template-columns: repeat(3, 1fr);
+
+      .project1 {
+        grid-area: 'project1';
+        img {
+          width: 250px;
+          height: 200px;
+          border: 3px solid set-text-color($primary-color);
+        }
+      }
+    }
+  }
+}
+
+
+.about-info {
+  margin-top: 3rem;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    'bioImg bio bio'
+    'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr);
+  .bio-img {
+    grid-area: bioImg;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: auto;
+    border: 3px solid $secondary-color;
+  }
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+
+  }
+  .job1 {
+    grid-area: job1;
+  }
+  .job2 {
+    grid-area: job2;
+  }
+  .job3 {
+    grid-area: job3;
+  }
+  .job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: 5px solid $secondary-color;
+  }
+}
+
+//Button Style
+.btn {
+  display: block;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+
+}
+.btn-lighten {
+  @extend .btn;
+  color: set-text-color($primary-color);
+  background: lighten($primary-color, 10);
+}
+.btn-darken {
+  @extend .btn;
+  color: set-text-color($primary-color);
+  background: darken($primary-color, 10);
+
+}
+
+.main-footer {
+  width: 100%;
+  height: 60px;
+  color: set-text-color($primary-color);
+  text-align: center;
+  padding: 0.5rem;
+  background: darken($primary-color, 10);
+}
