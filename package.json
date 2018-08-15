@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "sass",
   "main": "index.js",
-  "homepage": "https://ntt261298.github.io/portfolio"
+  "homepage": "https://ntt261298.github.io/Portfolio-Responsive",
   "scripts": {
     "sass": "node-sass -w scss -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
