@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "sass",
   "main": "index.js",
+  "homepage": "https://ntt261298.github.io/portfolio"
   "scripts": {
-    "sass": "node-sass -w scss -o css/ --recursive"
+    "sass": "node-sass -w scss -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "ntt261298",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "node-sass": "^4.9.3"
   }
 }
